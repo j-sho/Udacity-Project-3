@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>edit comment</h2>
+
+    <form method="post">
+
+      <label>
+        <div>Comment</div>
+        <textarea name="content">{{content}}</textarea>
+      </label>
+
+      <div class="error">{{error}}</div>
+
+      <input type="hidden"  name="author" value="{{user.name}}">
+      <input type="hidden" name="postId" value="{{postId}}">
+
+      {{request}}
+
+      <button type="submit" value="submit" name="save">save</button>
+      <button class="cancel" type="submit" value="submit" name="cancel">cancel</button></a>
+      <span class="form__message">{{error}}</span>
+    </form>
+{% endblock %}
+

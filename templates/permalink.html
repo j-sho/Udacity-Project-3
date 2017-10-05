@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if user %}
+        {{post.render(user.key().id()) | safe}}
+    {% else %}
+        {{ post.render(None) | safe }}
+    {% endif %}
+
+    {% if user and user.key().id() == post.user_id %}
+        <a href="/blog/{{post.key().id()}}/deletepost/{{post.user_id}}">
+            <div class="post__delete">
+                <img src="/static/images/delete.svg" alt="" class="icon delete-icon">
+            </div>
+        </a>
+        <a href="/blog/{{post.key().id()}}/editpost">
+            <div class="post__edit">
+                <img src="/static/images/edit.svg" alt="" class="icon edit-icon">
+            </div>
+        </a>
+    {% endif %}
+
+    {% if user %}
+        <a href="/blog/{{post.key().id()}}/newcomment/{{user.key().id()}}">
+            <div class="post-comment">
+                <img src="/static/images/comment.svg" alt="" class="icon comment-icon">
+            </div>
+        </a>
+    {% endif %}
+
+    <div class="comments">
+        {% for c in comments %}
+        <div class="comment">
+            <div class="comment-heading">
+                <div class="comment-author">{{c.user_name}}</div>
+                <div class="comment-date">{{c.created.strftime("%b %d, %Y")}}</div>
+            </div>
+            <div class="comment-content">{{c.content}}</div>
+        </div>
+        <br>
+        <div class="clearfix">
+            {% if user and user.key().id() == c.user_id %}
+            <a href="/blog/{{post.key().id()}}/{{c.user_id}}/deletecomment/{{ c.key().id() }}">
+            <div class="comment__delete">
+            <img src="/static/images/delete.svg" alt="" class="icon delete-icon">
+            </div></a>
+            <a href="/blog/{{post.key().id()}}/{{c.user_id}}/editcomment/{{ c.key().id() }}">
+            <div class="comment__edit">
+            <img src="/static/images/edit.svg" alt="" class="icon edit-icon">
+            </div></a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <i>{{error}}</i>
+
+{% endblock %}
