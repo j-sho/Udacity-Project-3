@@ -43,14 +43,9 @@ Make sure you have Google app engine installed
 3. spin up the server command `dev_appserver.py app.yaml`
 4. Go to your browser and type [`http://localhost:8080`](http://localhost:8080)
 
-Or you could try out the app here:
-[Multi User Blog](https://multiuserblog-163711.appspot.com/blog)
-
-
 ## Front End
 * Custom styles throush main.css
 
 ## Backend
 * Python
 * WebApp2 (Google appengine sdk)
-* Google Datastore
