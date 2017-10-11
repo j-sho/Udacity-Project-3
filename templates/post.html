@@ -17,16 +17,16 @@
     {{p._render_text | safe}}
   </div>
   <br>
-  <div class="post__like">
+</div>
+<!--   <div class="post__like"> -->
+    <span class="like__count">{{p.likes}}</span>
     <a href="/blog/{{p.key().id()}}/like">
       <img class="icon like-icon" src="/static/images/like.svg" alt="">
       </a>
-    <span class="like__count">{{p.likes}}</span>
     <br>
     <span class="error">{{access_error}}</span>
-  </div>
+  <!-- </div> -->
 
-</div>
 
 
 

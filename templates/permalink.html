@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="clearfix flex-holder">
     {% if user %}
         {{post.render(user.key().id()) | safe}}
     {% else %}
@@ -28,6 +29,8 @@
         </a>
     {% endif %}
 
+    </div>
+
     <div class="comments">
         {% for c in comments %}
         <div class="comment">
@@ -38,7 +41,7 @@
             <div class="comment-content">{{c.content}}</div>
         </div>
         <br>
-        <div class="clearfix">
+        <div class="clearfix flex-holder">
             {% if user and user.key().id() == c.user_id %}
             <a href="/blog/{{post.key().id()}}/{{c.user_id}}/deletecomment/{{ c.key().id() }}">
             <div class="comment__delete">

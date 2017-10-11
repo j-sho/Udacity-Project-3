@@ -3,14 +3,14 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14px;
 
-    width: 800px;
+    width: 1000px;
     margin: 0 auto;
     padding: 10px;
     color: #333;
 }
 
 .login-area {
-    font-size: 13px;
+    font-size: 16px;
     color: gray;
     position: absolute;
     top: 10px;
@@ -124,7 +124,8 @@ textarea {
 }
 
 .icon {
-    max-width: 30px;
+    max-width: 25px;
+    margin: 15px 0;
 }
 
 input[type=text].signup_form,
@@ -146,4 +147,43 @@ button {
 
 }
 
+
+.submit-button-form {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius : 20px 3px 20px 3px ;
+    font-size : 14px;
+    margin-top: 15px;
+    margin-right: 10px;
+    color : #0e0f0b;
+    padding : 8px 20px;
+    background-color : #ffffff;
+}
+
+.flex-holder {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.flex-holder a {
+  flex: 1;
+  max-width: 50px;
+}
+
+.container-centered {
+    width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.post {
+    width: 100%;
+}
+
+.flex-holder span {
+  padding: 20px 10px 0 0;
+}
 
